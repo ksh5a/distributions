@@ -1,6 +1,11 @@
 {
     "recommendations": [
         "denoland.vscode-deno",
-        "bmewburn.vscode-intelephense-client"
+        "bmewburn.vscode-intelephense-client",
+        "dennismaxjung.vscode-dotnet-auto-attach",
+        "sidekick.sidekick-debugger",
+        "georgewfraser.vscode-javac",
+        "ms-vscode.js-debug-nightly",
+        "cweijan.vscode-mysql-client2"
     ]
 }

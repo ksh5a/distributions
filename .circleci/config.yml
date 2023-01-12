@@ -1,9 +1,12 @@
 version: 2
 aliases:
   - &envinfo
-    name: Run envinfo
-    command: |
+    name: Run envinfo 
+    style store
+    command: | 
       npx envinfo
+      welcome
+    
 
 jobs:
   ubuntu-test:
