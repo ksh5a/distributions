@@ -78,6 +78,7 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 * **Linux Mint 20.2 "Uma"** (via Ubuntu 20.04 LTS)
 * **Linux Mint 20.3 "Una"** (via Ubuntu 20.04 LTS)
 * **Linux Mint 21 "Vanessa"** (via Ubuntu 22.04 LTS)
+* **Linux Mint 21.1 "Vera"** (via Ubuntu 22.04 LTS)
 * ~~**Linux Mint Debian Edition (LMDE) 3 "Cindy"** (via Debian 9)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
 * **Linux Mint Debian Edition (LMDE) 4 "Debbie"** (via Debian 10)
 * **Linux Mint Debian Edition (LMDE) 5 "Elsie"** (via Debian 11)
@@ -282,6 +283,7 @@ curl -fsSL https://deb.nodesource.com/gpgkey/nodesource.gpg.key | gpg --dearmor 
 # wget can also be used:
 # wget --quiet -O - https://deb.nodesource.com/gpgkey/nodesource.gpg.key | gpg --dearmor | sudo tee "$KEYRING" >/dev/null
 gpg --no-default-keyring --keyring "$KEYRING" --list-keys
+chmod a+r /usr/share/keyrings/nodesource.gpg
 ```
 The key ID is `9FD3B784BC1C6FC31A8A0A1C1655A0AB68576280`.
 
@@ -355,8 +357,8 @@ NodeSource will continue to maintain the following architectures and may add add
 
 **Supported Amazon Linux versions:**
 
-* **Amazon Linux** (64-bit)
-* **Amazon Linux 2** (64-bit)
+* ~~**Amazon Linux** (64-bit)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
+* ~~**Amazon Linux 2** (64-bit)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
 
 <a name="rpminstall"></a>
 ### Installation instructions
