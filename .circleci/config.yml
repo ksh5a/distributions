@@ -1,58 +1,26 @@
-version: 2
-aliases:
-  - &envinfo
-    name: Run envinfo 
-    style store
-    command: | 
-      npx envinfo
-      welcome
-    
+# Use the latest 2.1 version of CircleCI pipeline process engine.
+# See: https://circleci.com/docs/2.0/configuration-reference
+version: 2.1
 
+# Define a job to be invoked later in a workflow.
+# See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
-  ubuntu-test:
-    working_directory: ~/repo
+  say-hello:
+    # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
+    # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
     docker:
-      - image: ubuntu
+      - image: cimg/base:stable
+    # Add steps to the job
+    # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
       - checkout
-      - run: apt update
-      - run: bash deb/setup_16.x
-      - run: apt install nodejs -y
-      - run: *envinfo
-  debian-test:
-    working_directory: ~/repo
-    docker:
-      - image: debian
-    steps:
-      - checkout
-      - run: apt update
-      - run: bash deb/setup_16.x
-      - run: apt install nodejs -y
-      - run: *envinfo
-  centos-test:
-    working_directory: ~/repo
-    docker:
-      - image: centos:7
-    steps:
-      - checkout
-      - run: bash rpm/setup_16.x
-      - run: yum install nodejs -y
-      - run: *envinfo
-  fedora-test:
-    working_directory: ~/repo
-    docker:
-      - image: fedora:34
-    steps:
-      - checkout
-      - run: bash rpm/setup_16.x
-      - run: dnf install nodejs -y
-      - run: *envinfo
+      - run:
+          name: "Say hello"
+          command: "echo Hello, World!"
 
+# Invoke jobs via workflows
+# See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
-  version: 2
-  build_and_test:
+  say-hello-workflow:
     jobs:
-      - ubuntu-test
-      - debian-test
-      - centos-test
-      - fedora-test
+      - say-hello
